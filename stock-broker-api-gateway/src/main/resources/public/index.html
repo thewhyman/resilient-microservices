@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Resilient Microservices</title>
+    <script src="/webjars/jquery/2.1.1/jquery.js"></script>
+    <script src="/js/jquery.lettering.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+</head>
+<body>
+<div class="container">
+    <div>
+        <h2>Resilient Microservices</h2>
+        <h2>Stock Broker API Gateway</h2>
+        <h2>Rate Limitter Example</h2>
+        <h2>Netflix Zuul</h2>
+        <!--<h3>Stock Broker Mobile BFF Edge Service - Spring REST Service</h3>-->
+        <!--<ul>-->
+            <!--<li><a href="/bff/portfolio/AAPL">AAPL Stock</a></li>-->
+            <!--<li><a href="/bff/portfolio/SCHW">Schwab Stock</a></li>-->
+            <!--<li><a href="/bff/portfolio/AMZN">Amazon Stock</a></li>-->
+            <!--<li><a href="/bff/portfolio/GOOGL">Alaphabet Stock</a></li>-->
+            <!--<li><a href="/bff/portfolio/SSNLF">Samsung Stock</a></li>-->
+        <!--</ul>-->
+        <!--<ul>-->
+            <!--<li><a href="/bff/portfolio/">All Stock</a></li>-->
+        <!--</ul>-->
+    </div>
+</div>
+<script>
+    $(document).ready(
+        function () {
+            $("div.container > div").addClass('os-phrases')
+            $(".os-phrases > h2").lettering('words').children("span")
+                .lettering().children("span").lettering();
+        })
+</script>
+</body>
+</html>

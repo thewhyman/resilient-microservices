@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Resilient Microservices</title>
+    <script src="/webjars/jquery/2.1.1/jquery.js"></script>
+    <script src="/js/jquery.lettering.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+</head>
+<body>
+<div class="container">
+    <div>
+        <h2>Resilient Microservices</h2>
+        <h2>Stock Market Data Service</h2>
+        <h2>Spring Data REST Service</h2>
+        <!--<ul>-->
+            <!--<li><a href="/stocks/AAPL">AAPL Stock</a></li>-->
+            <!--<li><a href="/stocks/SCHW">Schwab Stock</a></li>-->
+            <!--<li><a href="/stocks/AMZN">Amazon Stock</a></li>-->
+            <!--<li><a href="/stocks/GOOGL">Alaphabet Stock</a></li>-->
+            <!--<li><a href="/stocks/SSNLF">Samsung Stock</a></li>-->
+        <!--</ul>-->
+        <!--<ul>-->
+            <!--<li><a href="/stocks/">All Stocks</a></li>-->
+        <!--</ul>-->
+    </div>
+<script>
+    $(document).ready(
+        function() {
+            $("div.container > div").addClass('os-phrases')
+            $(".os-phrases > h2").lettering('words').children("span")
+                .lettering().children("span").lettering();
+        })
+</script>
+</body>
+</html>

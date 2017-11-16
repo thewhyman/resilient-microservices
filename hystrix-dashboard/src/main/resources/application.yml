@@ -1,0 +1,11 @@
+---
+server:
+  port: "${PORT:9903}"
+
+management:
+  security:
+    enabled: false
+
+security:
+  basic:
+    enabled: false

@@ -1,0 +1,8 @@
+---
+applications:
+- name: stock-broker-api-gateway
+  memory: 1G
+  path: ./target/stock-broker-api-gateway-1.0.0-SNAPSHOT.jar
+  services:
+   - service-registry
+   - circuit-breaker-dashboard

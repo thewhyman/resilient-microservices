@@ -1,0 +1,20 @@
+---
+applications:
+- name: stock-broker-api-gateway
+  memory: 1G
+  path: ./stock-broker-api-gateway/target/stock-broker-api-gateway-1.0.0-SNAPSHOT.jar
+  services:
+   - service-registry
+   - circuit-breaker-dashboard
+- name: stock-broker-mobile-bff
+  memory: 1G
+  path: ./stock-broker-mobile-bff/target/stock-broker-mobile-bff-1.0.0-SNAPSHOT.jar
+  services:
+   - service-registry
+   - circuit-breaker-dashboard
+- name: stock-market-data-service
+  memory: 1G
+  path: ./stock-market-data-service/target/stock-market-data-service-1.0.0-SNAPSHOT.jar
+  services:
+   - app-autoscaler
+   - service-registry

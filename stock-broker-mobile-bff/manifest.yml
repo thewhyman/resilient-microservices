@@ -1,0 +1,8 @@
+---
+applications:
+- name: stock-broker-mobile-bff
+  memory: 1G
+  path: ./target/stock-broker-mobile-bff-1.0.0-SNAPSHOT.jar
+  services:
+   - service-registry
+   - circuit-breaker-dashboard

@@ -1,0 +1,9 @@
+---
+applications:
+- name: stock-market-data-service
+  memory: 1G
+  path: ./target/stock-market-data-service-1.0.0-SNAPSHOT.jar
+  services:
+   - app-autoscaler
+   - service-registry
+   - circuit-breaker-dashboard
