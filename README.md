@@ -52,6 +52,7 @@ $ mvn clean install
 ```
 $ cf push
 ```
+[NOTE] PWS wouldn't allow same routes to be bound for 2 different application. You may have to change the name of the applications in manifest.yml. Howerver, you don't have to change the name of apps as they are discovered automatically by Service Registry.
 
 ## Running the tests
 
@@ -73,6 +74,31 @@ $ curl https://stock-market-data-service.cfapps.io/stocks
 * Destroy Stock Market Data Service. Destroys a single instance that handled the request. Watch to see the instance being recreated by PWS.
 ```
 $ curl https://stock-market-data-service.cfapps.io/destroy
+```
+
+* Stop Stock Market Data Service. Stops all instances.
+```
+$ cf stop stock-market-data-service
+```
+
+* While Stock Market Data Service is down, call Stock Broker API Gateway. Stock Broker Mobile BFF cirucuit breaker opens and get results from cache. Watch "lastUpdatedTime", it stays same. 
+```
+$ curl https://stock-broker-api-gateway.cfapps.io/bff/portfolio/
+```
+
+* Start Stock Market Data Service. Stops all instances.
+```
+$ cf start stock-market-data-service
+```
+
+* When the Stock Market Data Service comes online, Stock Broker Mobile BFF cirucuit breaker closes and gets latest stock info. "lastUpdatedTime" should update every 5 seconds.
+```
+$ curl https://stock-broker-api-gateway.cfapps.io/bff/portfolio/
+```
+
+*  Check out Actuator endpoints on all these services. You can get Hystrix stream url there to input into Hystrix Dashboard.
+```
+$ curl https://stock-broker-api-gateway.cfapps.io/actuator
 ```
 
 * Run Load test in API gateway
