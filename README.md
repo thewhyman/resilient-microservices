@@ -4,7 +4,7 @@ Building microservices offers great benefits to corporations; however, this come
  
 * PaaS - Pivotal Web Services Platform (PWS)
 * API Gateway, Edge Service, Backends for Frontends (BFF) - Netflix Zuul
-* REST Client - Feign
+* REST Client - Feign (with Hateoas enabled)
 * Service Registy - Netflix Eureka, Ribbon
 * Circuit Breaker - Netflix Hystrix and Turbine
 
