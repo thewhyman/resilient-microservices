@@ -1,6 +1,8 @@
 package com.smarttrader.broker.services;
 
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
@@ -23,6 +25,8 @@ import java.util.stream.Collectors;
 @EnableHypermediaSupport(type = EnableHypermediaSupport.HypermediaType.HAL)
 public class StockPortfolioController {
 
+    private static final Logger logger = LoggerFactory.getLogger(StockPortfolioController.class);
+
     /**
      * Simple in-memory cache of stocks.
      * Since this is an in-memroy cache, each app instace will maintain its own cache.
@@ -41,6 +45,7 @@ public class StockPortfolioController {
     @HystrixCommand(fallbackMethod = "getCachedQuote")
     @RequestMapping("/portfolio/{ticker}")
     public Stock getQuote(@PathVariable String ticker) {
+        logger.debug("Calling backend service for " + ticker);
         return cacheStock(this.stockClient.getStock(ticker));
     }
 

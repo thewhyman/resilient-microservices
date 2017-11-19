@@ -18,3 +18,13 @@ management:
 security:
   basic:
     enabled: false
+
+logging:
+  level:
+    root: WARN
+    org:
+      springframework:
+        security: DEBUG
+        web: ERROR
+    com:
+      smarttrader: DEBUG
