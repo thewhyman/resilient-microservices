@@ -15,4 +15,5 @@ public class StockBrokerMobileBffApplication {
     public static void main(String[] args) {
         SpringApplication.run(StockBrokerMobileBffApplication.class, args);
     }
+
 }
